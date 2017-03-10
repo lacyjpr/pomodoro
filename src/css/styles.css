@@ -42,7 +42,8 @@ p {
 .timer {
 	width: 310px;
 	margin-top: 40px;
-	padding-bottom: 40px;
+	margin-left: 0;
+	margin-right: 0;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 8px;
