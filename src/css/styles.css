@@ -1,10 +1,28 @@
+
+
 p {
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
+.break,
+.start,
+.work {
+	font-size: 1.5em;	
+}
+.breakPlus,
+.breakMinus,
+.workPlus,
+.workMinus,
+.start {
+	cursor: pointer;
+}
+
+
 .break {
-	margin: 15px;
+	margin-top: 20px;
+	margin-left: 50px;
+	padding: 0;
 	text-align: left;
 }
 
@@ -15,28 +33,33 @@ p {
 
 .work {
 	float: right;
-	margin: 15px;
+	margin-top: 20px;
+	margin-right: 50px;
+	padding: 0;
 	text-align: right;
 }
 
 .timer {
-	width: 280px;
+	width: 310px;
 	margin-top: 40px;
+	padding-bottom: 40px;
 	text-align: center;
 	border: 1px solid black;
 	border-radius: 8px;
 	background-color: gray;
+	box-shadow: 10px 15px 25px 2px rgba(0,0,0,0.5), inset -8px -12px 18px 2px rgba(0,0,0,0.5);
 }
 
 .clock {
 	width: 250px;
 	height: 250px;
 	line-height: 250px;
-	margin: 15px;
+	margin: 30px;
 	border: 1px solid black;
 	border-radius: 50%;
+	font-size: 3em;
 	background-color: red;
-	box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
 }
 
 #display {
