@@ -23,20 +23,19 @@ span {
 
 
 .break {
-	margin-top: 20px;
-	margin-left: 60px;
+	margin: 20px 0 0 50px;
 	padding: 0;
 	text-align: left;
 }
 
 .start {
+	margin: 10px 0 10px 0;
 	text-align: center;
 }
 
 .work {
 	float: right;
-	margin-top: 20px;
-	margin-right: 60px;
+	margin: 20px 50px 0 0;
 	padding: 0;
 	text-align: right;
 }
@@ -59,7 +58,7 @@ span {
 	border: 1px solid black;
 	border-radius: 50%;
 	font-size: 3em;
-	background-color: red;
+	background-color: #FF0000;
 	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
 }
 
