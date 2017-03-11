@@ -53,7 +53,7 @@ span {
 }
 
 .timer {
-	width: 310px;
+	width: 300px;
 	margin: 40px 0 0 0;
 	text-align: center;
 	border: 1px solid black;
@@ -66,7 +66,7 @@ span {
 	width: 250px;
 	height: 250px;
 	line-height: 250px;
-	margin: 0px 30px 0 30px;
+	margin: 0px 25px 0 25px;
 	border: 1px solid black;
 	border-radius: 50%;
 	font-size: 3em;
