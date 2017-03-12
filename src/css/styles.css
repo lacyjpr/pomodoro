@@ -8,6 +8,10 @@ span {
 	margin: 0 0 0 0;
 }
 
+.titl {
+	display: inline-block;
+}
+
 .break,
 .start,
 .work,
@@ -24,9 +28,10 @@ span {
 
 
 .break {
+	float: left;
 	margin: 20px 0 0 50px;
 	padding: 0;
-	text-align: left;
+	text-align: center;
 }
 
 .start {
@@ -38,7 +43,7 @@ span {
 	float: right;
 	margin: 20px 50px 0 0;
 	padding: 0;
-	text-align: right;
+	text-align: center;
 }
 
 .btn {
@@ -50,6 +55,10 @@ span {
 	border: 1px solid black;
 	background-color: #ffffff !important;
 	outline: none !important;
+}
+
+.container-fluid{
+	text-align: center;
 }
 
 .timer {
@@ -82,5 +91,131 @@ span {
 
 .reset{
 	margin: 10px 0 25px 0;
+}
+
+@media only screen and (min-width : 320px) {
+
+    .titl {
+	display: none;
+	}   
+}
+
+@media only screen and (min-width : 480px) {
+
+	.titl {
+	display: none;
+	}
+
+}
+
+@media only screen and (min-width : 768px) {
+
+	.titl {
+	display: inline-block;
+	}
+
+	.break,
+	.start,
+	.work,
+	.reset {
+		font-size: 2em;	
+	}
+
+	.break {
+		float: left;
+		margin: 30px 0 0 50px;
+		padding: 0;
+		text-align: center;
+	}
+
+	.start {
+		margin: 10px 0 10px 0;
+		text-align: center;
+	}
+
+	.work {
+		float: right;
+		margin: 30px 50px 0 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	.timer {
+	width: 700px;
+	margin-top: 40px;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 8px;
+	background-color: #00ff48;
+	box-shadow: 10px 15px 25px 2px rgba(0,0,0,0.5), inset -8px -12px 18px 2px rgba(0,0,0,0.5);
+	}
+
+	.clock {
+	width: 250px;
+	height: 250px;
+	line-height: 250px;
+	margin: 0px 225px 0 225px;
+	border: 1px solid black;
+	border-radius: 50%;
+	font-size: 4em;
+	background-color: #FF0000;
+	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
+	}
+
+}
+
+@media only screen and (min-width : 992px) {
+	.titl {
+	display: inline-block;
+	}
+
+	.break,
+	.start,
+	.work,
+	.reset {
+		font-size: 2em;	
+	}
+
+	.break {
+		float: left;
+		margin: 30px 0 0 50px;
+		padding: 0;
+		text-align: center;
+	}
+
+	.start {
+		margin: 10px 0 10px 0;
+		text-align: center;
+	}
+
+	.work {
+		float: right;
+		margin: 30px 50px 0 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	.timer {
+	width: 900px;
+	margin-top: 40px;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 8px;
+	background-color: #00ff48;
+	box-shadow: 10px 15px 25px 2px rgba(0,0,0,0.5), inset -8px -12px 18px 2px rgba(0,0,0,0.5);
+	}
+
+	.clock {
+	width: 250px;
+	height: 250px;
+	line-height: 250px;
+	margin: 0px 325px 0 325px;
+	border: 1px solid black;
+	border-radius: 50%;
+	font-size: 4em;
+	background-color: #FF0000;
+	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
+	}
+
 }
 
