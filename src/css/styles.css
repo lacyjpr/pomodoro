@@ -86,7 +86,8 @@ span {
 	border: 1px solid black;
 	border-radius: 50%;
 	font-size: 3em;
-	background-color: #FF0000;
+	color: #ffffff;
+	background-color: #ff0000;
 	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
 }
 
