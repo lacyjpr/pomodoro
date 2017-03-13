@@ -45,6 +45,8 @@ $(document).ready(function() {
 		$(".workTime").html(workTime);
 		$(".content").html("25:00");
 		clearInterval(counter);
+		$(".progress").stop(true, true);
+		$(".progress").animate({ width: "0%" }, 0);
 	});
 
 	$(".start").on("click", function() {
