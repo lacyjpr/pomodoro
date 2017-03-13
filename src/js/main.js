@@ -2,17 +2,17 @@ $(document).ready(function() {
 
 	var breakTime = 5;
 	var workTime = 25;
-	
+	var state = "";
 
 	// Increment/decrement break time
 	$(".breakPlus").on("click", function() {
-		if (breakTime < 999) {
+		if (breakTime < 999 && state !== "running") {
 			breakTime++;
 			$(".breakTime").html(breakTime);
 		}
 	});
 	$(".breakMinus").on("click", function() {
-		if (breakTime > 1) {
+		if (breakTime > 1 && state !== "running") {
 			breakTime--;
 			$(".breakTime").html(breakTime);
 		}
@@ -21,14 +21,14 @@ $(document).ready(function() {
 
 	// Increment/decrement work time
 	$(".workPlus").on("click", function() {
-		if (workTime < 999) {
+		if (workTime < 999 && state !== "running") {
 			workTime++;
 			$(".workTime").html(workTime);
 			$(".display").html(workTime + ":00");
 		}
 	});
 	$(".workMinus").on("click", function() {
-		if (workTime > 1) {
+		if (workTime > 1 && state !== "running") {
 			workTime--;
 			$(".workTime").html(workTime);
 			$(".display").html(workTime + ":00");
@@ -39,15 +39,19 @@ $(document).ready(function() {
 	$(".reset").on("click", function() {
 		breakTime = 5;
 		workTime = 25;
+		state = "";
+		$(".breakTime").html(breakTime);
+		$(".workTime").html(workTime);
 		$(".display").html("25:00");
 		clearInterval(counter);
 	});
 
 	$(".start").on("click", function() {
-		countDown(workTime);
+		state = "running";
+		workTimer(workTime);	
 	});
 
-	function countDown(val) {
+	function workTimer(val) {
 		// Timer credit: http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
 		var time = toSeconds(val);
 		counter = setInterval(timer, 1000);
@@ -55,7 +59,21 @@ $(document).ready(function() {
 			time = time - 1;
 			if (time <= 0) {
 				clearInterval(counter);
-				return;
+				breakTimer(breakTime);
+			}
+			$(".display").html(toMinutes(time));
+		}
+	}
+
+	function breakTimer(val) {
+		// Timer credit: http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
+		var time = toSeconds(val);
+		counter = setInterval(timer, 1000);
+		function timer() {
+			time = time - 1;
+			if (time <= 0) {
+				clearInterval(counter);
+				workTimer(workTime);
 			}
 			$(".display").html(toMinutes(time));
 		}
