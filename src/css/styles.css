@@ -115,6 +115,8 @@ span {
 	height: 100%;
 	position: absolute;
 	background: blue;
+	border-radius: 50%;
+	box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
 	left: 0px;
 	top: 0px;
 }
