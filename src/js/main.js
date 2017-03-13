@@ -47,6 +47,8 @@ $(document).ready(function() {
 		clearInterval(counter);
 		$(".progress").stop(true, true);
 		$(".progress").animate({ width: "0%" }, 0);
+		$(".getToWork").addClass("hidden");
+		$(".takeABreak").addClass("hidden");
 	});
 
 	$(".start").on("click", function() {
