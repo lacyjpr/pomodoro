@@ -56,11 +56,11 @@ $(document).ready(function() {
 	function workTimer(val) {
 		// Timer credit: http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
 		$(".progress").animate({ width: "100%" }, toMilliseconds(val));
-		$(".takeABreak").addClass("hidden");
 		var time = toSeconds(val);
 		counter = setInterval(function() {
 			time = time - 1;
 			if (time <= 0) {
+				$(".progress").css("width", "0%");
 				clearInterval(counter);
 				breakTimer(breakTime);
 			}
@@ -69,13 +69,14 @@ $(document).ready(function() {
 	}
 
 	function breakTimer(val) {
-		// Timer credit: http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
-		$(".content").animate({ width: "100%" }, toMilliseconds(val));
 		$(".takeABreak").removeClass("hidden");
+		$(".progress").animate({ width: "100%" }, toMilliseconds(val));
 		var time = toSeconds(val);
 		counter = setInterval(function() {
 			time = time - 1;
 			if (time <= 0) {
+				$(".takeABreak").addClass("hidden");
+				$(".progress").css("width", "0%");
 				clearInterval(counter);
 				workTimer(workTime);
 			}

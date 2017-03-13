@@ -115,7 +115,6 @@ span {
 	height: 100%;
 	position: absolute;
 	background: blue;
-	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
 	left: 0px;
 	top: 0px;
 }
@@ -202,6 +201,8 @@ span {
 		font-size: 4em;
 		background-color: #FF0000;
 		box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
+		overflow: hidden;
+		position: relative;
 	}
 
 }
@@ -262,6 +263,8 @@ span {
 		font-size: 4em;
 		background-color: #FF0000;
 		box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
+		overflow: hidden;
+		position: relative;
 	}
 
 }
