@@ -46,6 +46,10 @@ span {
 	text-align: center;
 }
 
+.takeABreak {
+	font-size: 1.5em;
+}
+
 .pause {
 	margin: 10px 0 10px 0;
 	text-align: center;
@@ -96,10 +100,28 @@ span {
 	color: #ffffff;
 	background-color: #ff0000;
 	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
+	overflow: hidden;
+	position: relative;
 }
 
-#display {
-    line-height: 250px;
+.content {
+	z-index: 9;
+	position: relative;
+}
+
+.progress {
+	z-index: 1;
+	width: 0px;
+	height: 100%;
+	position: absolute;
+	background: blue;
+	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
+	left: 0px;
+	top: 0px;
+}
+
+.display {
+	z-index: 1;
 }
 
 .reset{
