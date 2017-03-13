@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var workTime = 25;
 	var state = "";
 	var counter;
-	var ding = new Audio("/media/alarm.mp3");
+	var ding = new Audio("/pomodoro/media/alarm.mp3");
 
 	// Increment/decrement break time
 	$(".breakPlus").on("click", function() {
@@ -58,11 +58,13 @@ $(document).ready(function() {
 	function workTimer(val) {
 		// Timer credit: http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
 		ding.play();
+		$(".getToWork").removeClass("hidden");
 		$(".progress").animate({ width: "100%" }, toMilliseconds(val));
 		var time = toSeconds(val);
 		counter = setInterval(function() {
 			time = time - 1;
 			if (time <= 0) {
+				$(".getToWork").addClass("hidden");
 				$(".progress").animate({ width: "0%" }, 0);
 				clearInterval(counter);
 				breakTimer(breakTime);
