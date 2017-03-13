@@ -60,7 +60,7 @@ $(document).ready(function() {
 		counter = setInterval(function() {
 			time = time - 1;
 			if (time <= 0) {
-				$(".progress").attr("style", "width: 0px");
+				$(".progress").animate({ width: "0%" }, 0);
 				console.log("Width 0");
 				clearInterval(counter);
 				breakTimer(breakTime);
@@ -77,7 +77,7 @@ $(document).ready(function() {
 			time = time - 1;
 			if (time <= 0) {
 				$(".takeABreak").addClass("hidden");
-				$(".progress").attr("style", "width: 0px");
+				$(".progress").animate({ width: "0%" }, 0);
 				console.log("Width 0");
 				clearInterval(counter);
 				workTimer(workTime);
