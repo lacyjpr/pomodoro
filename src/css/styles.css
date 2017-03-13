@@ -18,6 +18,7 @@ span {
 
 .break,
 .start,
+.pause
 .work,
 .reset {
 	font-size: 1.5em;	
@@ -27,7 +28,8 @@ span {
 .breakMinus,
 .workPlus,
 .workMinus,
-.start {
+.start,
+.pause {
 	cursor: pointer;
 }
 
@@ -40,6 +42,11 @@ span {
 }
 
 .start {
+	margin: 10px 0 10px 0;
+	text-align: center;
+}
+
+.pause {
 	margin: 10px 0 10px 0;
 	text-align: center;
 }
@@ -123,6 +130,7 @@ span {
 
 	.break,
 	.start,
+	.pause
 	.work,
 	.reset {
 		font-size: 2em;	
@@ -136,6 +144,11 @@ span {
 	}
 
 	.start {
+		margin: 10px 0 10px 0;
+		text-align: center;
+	}
+
+	.pause {
 		margin: 10px 0 10px 0;
 		text-align: center;
 	}
@@ -178,6 +191,7 @@ span {
 
 	.break,
 	.start,
+	.pause,
 	.work,
 	.reset {
 		font-size: 2em;	
@@ -195,6 +209,10 @@ span {
 		text-align: center;
 	}
 
+	.pause {
+		margin: 10px 0 10px 0;
+		text-align: center;
+	}
 	.work {
 		float: right;
 		margin: 30px 50px 0 0;

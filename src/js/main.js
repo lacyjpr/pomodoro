@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var breakTime = 5;
 	var workTime = 25;
 	var state = "";
+	var isPaused = false;
 
 	// Increment/decrement break time
 	$(".breakPlus").on("click", function() {
@@ -48,34 +49,49 @@ $(document).ready(function() {
 
 	$(".start").on("click", function() {
 		state = "running";
-		workTimer(workTime);	
+		workTimer(workTime);
+		$(this).text("Pause");
+		$("#starter").removeClass("start").addClass("pause");
 	});
+
+	$(".pause").on("click", function() {
+		// credit: http://stackoverflow.com/questions/21277900/javascript-pausing-setinterval
+		isPaused = true;
+		$(this).text("Start");
+		$("#starter").addClass("start").removeClass("pause");
+	});
+
+
 
 	function workTimer(val) {
 		// Timer credit: http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
-		var time = toSeconds(val);
-		counter = setInterval(timer, 1000);
-		function timer() {
-			time = time - 1;
-			if (time <= 0) {
-				clearInterval(counter);
-				breakTimer(breakTime);
+		if (!isPaused) {
+			var time = toSeconds(val);
+			counter = setInterval(timer, 1000);
+			function timer() {
+				time = time - 1;
+				if (time <= 0) {
+					clearInterval(counter);
+					breakTimer(breakTime);
+				}
+				$(".display").html(toMinutes(time));
 			}
-			$(".display").html(toMinutes(time));
 		}
 	}
 
 	function breakTimer(val) {
 		// Timer credit: http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
-		var time = toSeconds(val);
-		counter = setInterval(timer, 1000);
-		function timer() {
-			time = time - 1;
-			if (time <= 0) {
-				clearInterval(counter);
-				workTimer(workTime);
+		if (!isPaused) {
+			var time = toSeconds(val);
+			counter = setInterval(timer, 1000);
+			function timer() {
+				time = time - 1;
+				if (time <= 0) {
+					clearInterval(counter);
+					workTimer(workTime);
+				}
+				$(".display").html(toMinutes(time));
 			}
-			$(".display").html(toMinutes(time));
 		}
 	}		
 
