@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var workTime = 25;
 	var state = "";
 	var counter;
-	var ding = new Audio("/media/alarm.mp3");
+	var ding = new Audio("/pomodoro/media/alarm.mp3");
 
 	// Increment/decrement break time
 	$(".breakPlus").on("click", function() {
@@ -58,7 +58,7 @@ $(document).ready(function() {
 		switch (val) {
 		case "Start":
 			state = "running";
-			$("button.start").text("Pause");
+			$(".start").text("Pause");
 			if (!$(".takeABreak").hasClass("hidden")) {
 				breakTimer($(".content").text());
 			} else {
@@ -68,7 +68,7 @@ $(document).ready(function() {
 		case "Pause":
 			state = "paused";
 			clearInterval(counter);
-			$("button.start").text("Start");
+			$(".start").text("Start");
 			if (!$(".takeABreak").hasClass("hidden")) {
 				$(".breakTimer").clearQueue();
 				$(".breakTimer").stop();
@@ -136,10 +136,6 @@ $(document).ready(function() {
 		var seconds = val - minutes * 60;
 		seconds = (seconds < 10) ? "0" + seconds : seconds;
 		return minutes + ":" + seconds;
-	}
-
-	function toMilliseconds(val) {
-		return val * 60000;
 	}
 
 
