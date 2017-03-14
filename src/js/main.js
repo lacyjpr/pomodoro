@@ -49,6 +49,7 @@ $(document).ready(function() {
 		$(".progress").animate({ width: "0%" }, 0);
 		$(".breakTimer").stop(true, true);
 		$(".breakTimer").animate({ width: "0%" }, 0);
+		$(".start").text("Start");
 		$(".getToWork").addClass("hidden");
 		$(".takeABreak").addClass("hidden");
 	});
