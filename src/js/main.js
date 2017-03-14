@@ -61,16 +61,21 @@ $(document).ready(function() {
 			$("button.start").text("Pause");
 			if (!$(".takeABreak").hasClass("hidden")) {
 				breakTimer($(".content").text());
-				console.log("content " + $(".content").text());
 			} else {
 				workTimer($(".content").text());
-				console.log($(".content").text());
 			}
 			break;
 		case "Pause":
 			state = "paused";
 			clearInterval(counter);
 			$("button.start").text("Start");
+			if (!$(".takeABreak").hasClass("hidden")) {
+				$(".breakTimer").clearQueue();
+				$(".breakTimer").stop();
+			} else {
+				$(".progress").clearQueue();
+				$(".progress").stop();
+			}
 			break;
 		}
 	});
@@ -106,7 +111,6 @@ $(document).ready(function() {
 			that.dequeue();
 		});
 		var time = toSeconds(val);
-		console.log("time " +toSeconds(val));
 		counter = setInterval(function() {
 			time = time - 1;
 			if (time <= 0) {
@@ -121,7 +125,6 @@ $(document).ready(function() {
 
 	function toSeconds(val) {
 		var arr = val.split(":");
-		console.log("arr " + arr);
 		var minutes = arr[0];
 		var seconds = arr[1];
 		return (parseInt(seconds, 10) + (parseInt(minutes, 10) * 60));
