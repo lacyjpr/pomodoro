@@ -94,11 +94,10 @@ span {
 .clock {
 	width: 250px;
 	height: 250px;
-	line-height: 250px;
 	margin: 0px 25px 0 25px;
 	border: 1px solid black;
 	border-radius: 50%;
-	font-size: 3em;
+	font-size: 2em;
 	color: #ffffff;
 	background-color: #ff0000;
 	box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
@@ -198,11 +197,10 @@ span {
 	.clock {
 		width: 250px;
 		height: 250px;
-		line-height: 250px;
 		margin: 0px 225px 0 225px;
 		border: 1px solid black;
 		border-radius: 50%;
-		font-size: 4em;
+		font-size: 3em;
 		background-color: #FF0000;
 		box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
 		overflow: hidden;
@@ -260,11 +258,10 @@ span {
 	.clock {
 		width: 250px;
 		height: 250px;
-		line-height: 250px;
 		margin: 0px 325px 0 325px;
 		border: 1px solid black;
 		border-radius: 50%;
-		font-size: 4em;
+		font-size: 3em;
 		background-color: #FF0000;
 		box-shadow: 4px 4px 10px 3px rgba(0,0,0,0.5), inset -25px -25px 40px rgba(0,0,0,.5);
 		overflow: hidden;

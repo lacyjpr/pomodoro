@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var workTime = 25;
 	var state = "";
 	var counter;
-	var ding = new Audio("/pomodoro/media/alarm.mp3");
+	var ding = new Audio("/media/alarm.mp3");
 
 	// Increment/decrement break time
 	$(".breakPlus").on("click", function() {
@@ -52,16 +52,26 @@ $(document).ready(function() {
 	});
 
 	$(".start").on("click", function() {
-		state = "running";
-		clearInterval(counter);
-		workTimer(workTime);
+		var val = ($(this).text());
+		switch (val) {
+		case "Start":
+			state = "running";
+			workTimer($(".content").text());
+			$("button.start").text("Pause");
+			break;
+		case "Pause":
+			state = "paused";
+			clearInterval(counter);
+			$("button.start").text("Start");
+			break;
+		}
 	});
 
 	function workTimer(val) {
 		// Timer credit: http://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer
 		ding.play();
 		$(".getToWork").removeClass("hidden");
-		$(".progress").animate({ width: "100%" }, toMilliseconds(val));
+		$(".progress").animate({ width: "100%" }, (toSeconds(val) * 1000));
 		var time = toSeconds(val);
 		counter = setInterval(function() {
 			time = time - 1;
@@ -69,7 +79,7 @@ $(document).ready(function() {
 				$(".getToWork").addClass("hidden");
 				$(".progress").animate({ width: "0%" }, 0);
 				clearInterval(counter);
-				breakTimer(breakTime);
+				breakTimer(breakTime + ":00");
 			}
 			$(".content").html(toMinutes(time));
 		}, 1000);
@@ -78,7 +88,8 @@ $(document).ready(function() {
 	function breakTimer(val) {
 		ding.play();
 		$(".takeABreak").removeClass("hidden");
-		$(".progress").animate({ width: "100%" }, toMilliseconds(val));
+		$(".progress").animate({ width: "100%" }, (toSeconds(val) * 1000));
+		console.log(toMilliseconds(toSeconds(val)));
 		var time = toSeconds(val);
 		counter = setInterval(function() {
 			time = time - 1;
@@ -86,14 +97,17 @@ $(document).ready(function() {
 				$(".takeABreak").addClass("hidden");
 				$(".progress").animate({ width: "0%" }, 0);
 				clearInterval(counter);
-				workTimer(workTime);
+				workTimer(workTime + ":00");
 			}
 			$(".content").html(toMinutes(time));
 		}, 1000);
 	}		
 
 	function toSeconds(val) {
-		return val * 60;
+		var arr = val.split(":");
+		var minutes = arr[0];
+		var seconds = arr[1];
+		return (parseInt(seconds, 10) + (parseInt(minutes, 10) * 60));
 	}
 
 	function toMinutes(val) {
