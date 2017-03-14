@@ -47,6 +47,8 @@ $(document).ready(function() {
 		clearInterval(counter);
 		$(".progress").stop(true, true);
 		$(".progress").animate({ width: "0%" }, 0);
+		$(".breakTimer").stop(true, true);
+		$(".breakTimer").animate({ width: "0%" }, 0);
 		$(".getToWork").addClass("hidden");
 		$(".takeABreak").addClass("hidden");
 	});
@@ -88,14 +90,14 @@ $(document).ready(function() {
 	function breakTimer(val) {
 		ding.play();
 		$(".takeABreak").removeClass("hidden");
-		$(".progress").animate({ width: "100%" }, (toSeconds(val) * 1000));
+		$(".breakTimer").animate({ width: "100%" }, (toSeconds(val) * 1000));
 		console.log(toMilliseconds(toSeconds(val)));
 		var time = toSeconds(val);
 		counter = setInterval(function() {
 			time = time - 1;
 			if (time <= 0) {
 				$(".takeABreak").addClass("hidden");
-				$(".progress").animate({ width: "0%" }, 0);
+				$(".breakTimer").animate({ width: "0%" }, 0);
 				clearInterval(counter);
 				workTimer(workTime + ":00");
 			}
