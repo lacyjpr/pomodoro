@@ -58,8 +58,14 @@ $(document).ready(function() {
 		switch (val) {
 		case "Start":
 			state = "running";
-			workTimer($(".content").text());
 			$("button.start").text("Pause");
+			if (!$(".takeABreak").hasClass("hidden")) {
+				breakTimer($(".content").text());
+				console.log("content " + $(".content").text());
+			} else {
+				workTimer($(".content").text());
+				console.log($(".content").text());
+			}
 			break;
 		case "Pause":
 			state = "paused";
@@ -74,6 +80,10 @@ $(document).ready(function() {
 		ding.play();
 		$(".getToWork").removeClass("hidden");
 		$(".progress").animate({ width: "100%" }, (toSeconds(val) * 1000));
+		$(".progress").queue(function() {
+			var that = $(this);
+			that.dequeue();
+		});
 		var time = toSeconds(val);
 		counter = setInterval(function() {
 			time = time - 1;
@@ -91,8 +101,12 @@ $(document).ready(function() {
 		ding.play();
 		$(".takeABreak").removeClass("hidden");
 		$(".breakTimer").animate({ width: "100%" }, (toSeconds(val) * 1000));
-		console.log(toMilliseconds(toSeconds(val)));
+		$(".breakTimer").queue(function() {
+			var that = $(this);
+			that.dequeue();
+		});
 		var time = toSeconds(val);
+		console.log("time " +toSeconds(val));
 		counter = setInterval(function() {
 			time = time - 1;
 			if (time <= 0) {
@@ -107,6 +121,7 @@ $(document).ready(function() {
 
 	function toSeconds(val) {
 		var arr = val.split(":");
+		console.log("arr " + arr);
 		var minutes = arr[0];
 		var seconds = arr[1];
 		return (parseInt(seconds, 10) + (parseInt(minutes, 10) * 60));
