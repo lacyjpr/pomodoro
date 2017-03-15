@@ -16,6 +16,18 @@ span {
 	display: inline-block;
 }
 
+button {
+	background: none !important;
+	border: none;
+	margin: 0;
+	padding: 0 !important;
+	outline: none;
+	outline-offset: 0;
+	font: inherit;
+	background-color: #000000;
+	cursor: pointer;
+}
+
 .break,
 .start,
 .pause,
@@ -23,22 +35,6 @@ span {
 .reset {
 	font-size: 2em;
 	z-index: 10;	
-}
-
-.breakPlus {
-	cursor: pointer;
-}
-
-.breakMinus {
-	cursor: pointer;
-}
-
-.workPlus {
-	cursor: pointer;
-}
-
-.workMinus {
-	cursor: pointer;
 }
 
 .break {
@@ -57,7 +53,6 @@ span {
 .pause {
 	margin: 10px 0 10px 0;
 	text-align: center;
-	cursor: pointer;
 }
 
 .getToWork {
@@ -145,7 +140,6 @@ span {
 
 .reset {
 	margin: 10px 0 25px 0;
-	cursor: pointer;
 }
 
 @media only screen and (max-width : 320px) {
