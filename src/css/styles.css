@@ -24,7 +24,7 @@ button {
 	background: none !important;
 	border: 0 none;
 	margin: 0;
-	padding: 0 10px 0 10px !important;
+	padding: 0 !important;
 	outline: 0;
 	outline-offset: 0;
 	font: inherit;
