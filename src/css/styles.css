@@ -46,7 +46,7 @@ button:active {
 .pause,
 .work,
 .reset {
-	font-size: 2.25em;
+	font-size: 2em;
 	z-index: 10;	
 }
 
