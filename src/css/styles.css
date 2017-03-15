@@ -37,6 +37,10 @@ button::-moz-focus-inner {
     padding: 0;
 }
 
+button:active {
+	padding: 0px;
+}
+
 .break,
 .start,
 .pause,
