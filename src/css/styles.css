@@ -22,9 +22,9 @@ h1 {
 
 button {
 	background: none !important;
-	border: none;
+	border: 0 none;
 	margin: 0;
-	padding: 0 3px 0 3px !important;
+	padding: 0 10px 0 10px !important;
 	outline: 0;
 	outline-offset: 0;
 	font: inherit;
@@ -33,7 +33,7 @@ button {
 }
 
 button::-moz-focus-inner {
-    border: none;
+    border: 0 none;
     padding: 0;
 }
 
