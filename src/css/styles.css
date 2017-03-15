@@ -28,6 +28,11 @@ button {
 	cursor: pointer;
 }
 
+button::-moz-focus-inner {
+    border: none;
+    padding: 0;
+}
+
 .break,
 .start,
 .pause,
