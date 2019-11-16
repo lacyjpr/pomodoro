@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  var breakTime = 5;
-  var workTime = 25;
+  var breakTime = 4;
+  var workTime = 12;
   var state = "";
   var counter;
   var ding = new Audio("/pomodoro/media/alarm.mp3");
@@ -37,8 +37,8 @@ $(document).ready(function() {
 
   // Reset to original values
   $(".reset").on("click", function() {
-    breakTime = 5;
-    workTime = 25;
+    breakTime = 4;
+    workTime = 12;
     state = "";
     $(".breakTime").html(breakTime);
     $(".workTime").html(workTime);
