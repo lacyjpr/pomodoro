@@ -498,9 +498,10 @@ css@2.2.1, css@^2.1.0, css@^2.2.0:
     source-map-resolve "^0.3.0"
     urix "^0.1.0"
 
-"css@git+https://github.com/pocketjoso/css.git":
+"css@https://github.com/pocketjoso/css.git":
   version "2.2.1"
-  resolved "git+https://github.com/pocketjoso/css.git#8ddea7e3cbc0a183ecf694a7a5fbc84326893893"
+  uid "8ddea7e3cbc0a183ecf694a7a5fbc84326893893"
+  resolved "https://github.com/pocketjoso/css.git#8ddea7e3cbc0a183ecf694a7a5fbc84326893893"
   dependencies:
     inherits "^2.0.1"
     source-map "^0.1.38"
@@ -1759,8 +1760,8 @@ lodash.mapvalues@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.mapvalues/-/lodash.mapvalues-4.6.0.tgz#1bafa5005de9dd6f4f26668c30ca37230cc9689c"
 
 lodash.merge@^4.4.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
 
 lodash.partialright@4.2.1:
   version "4.2.1"
