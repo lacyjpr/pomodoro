@@ -498,9 +498,10 @@ css@2.2.1, css@^2.1.0, css@^2.2.0:
     source-map-resolve "^0.3.0"
     urix "^0.1.0"
 
-"css@git+https://github.com/pocketjoso/css.git":
+"css@https://github.com/pocketjoso/css.git":
   version "2.2.1"
-  resolved "git+https://github.com/pocketjoso/css.git#8ddea7e3cbc0a183ecf694a7a5fbc84326893893"
+  uid "8ddea7e3cbc0a183ecf694a7a5fbc84326893893"
+  resolved "https://github.com/pocketjoso/css.git#8ddea7e3cbc0a183ecf694a7a5fbc84326893893"
   dependencies:
     inherits "^2.0.1"
     source-map "^0.1.38"
@@ -1256,8 +1257,8 @@ homedir-polyfill@^1.0.0, homedir-polyfill@^1.0.1:
     parse-passwd "^1.0.0"
 
 hosted-git-info@^2.1.4:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
 
 html-minifier@^3.0.3:
   version "3.5.2"
